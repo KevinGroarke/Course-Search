@@ -3,4 +3,4 @@
 npm install
 bower install
 gulp
-```t
+```
