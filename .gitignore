@@ -4,6 +4,7 @@ dist/
 rev/
 public/*
 !public/images/
+.idea/
 \#*#
 *~
 .DS_Store
