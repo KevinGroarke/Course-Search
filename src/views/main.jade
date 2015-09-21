@@ -1,0 +1,17 @@
+form(name='searchForm').center-element.md-whiteframe-z3
+    h3.center-horizontal Course Search
+    .search-wrapper
+        span.label-size Min RMP Rating
+        md-slider.md-primary.input-size(md-discrete, ng-model='rmpRating', step='.1', min='0', max='5', aria-label='rating')
+        span.label-size Max Hrs. Worked
+        md-slider.md-primary.input-size(md-discrete='', ng-model='hoursWorked', step='.1', min='0', max='30', aria-label='rating')
+
+        .all-columns
+            md-chips(ng-model='selectedSubjects',  md-autocomplete-snap, md-require-match='true', md-on-append='shortenChip($chip)')
+                md-autocomplete(md-selected-item='selectedItem', md-search-text='searchText',
+                    md-items='item in querySearch(searchText)', md-item-text='item.subjectShort',
+                    placeholder='Search for a subject')
+                    span(md-highlight-text='searchText') {{ item.subjectLong }}
+
+        .all-columns
+            md-switch.md-primary.all-columns(md-no-ink, aria-label='Switch No Ink', ng-model='allExcept') All Subjects Except

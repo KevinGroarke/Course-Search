@@ -1,0 +1,17 @@
+angular.module 'app', ['ui.router', 'ngMaterial', 'ngMessages']
+  .config ($stateProvider, $urlRouterProvider, $mdThemingProvider) ->
+    $urlRouterProvider.otherwise '/'
+
+    $stateProvider
+      .state 'home',
+        url: '/'
+        templateUrl: './views/main.html'
+        controller: 'mainController'
+        controllerAs: 'mainCtrl'
+      .state 'partial',
+        url: '/partial'
+        templateUrl: './views/partial.html'
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('grey')

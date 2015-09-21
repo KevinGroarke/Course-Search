@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "coffee-script": "*",
+    "gulp": "*",
+    "gulp-coffee": "*",
+    "gulp-coffeelint": "*",
+    "gulp-concat": "*",
+    "gulp-gh-pages": "*",
+    "gulp-htmlmin": "*",
+    "gulp-if": "*",
+    "gulp-imagemin": "*",
+    "gulp-jade": "*",
+    "gulp-load-plugins": "*",
+    "gulp-minify-css": "*",
+    "gulp-ng-annotate": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rev": "*",
+    "gulp-rev-collector": "*",
+    "gulp-rimraf": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-stylus": "*",
+    "gulp-uglify": "*",
+    "gulp-webserver": "*",
+    "main-bower-files": "*",
+    "require-dir": "*",
+    "wiredep": "*",
+    "jeet": "*"
+  }
+}
