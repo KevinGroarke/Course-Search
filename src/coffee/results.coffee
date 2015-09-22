@@ -3,5 +3,6 @@ angular.module 'app'
     $scope.result = []
     SearchService.search().then(
       $scope.result = SearchService.getResponse()
+      while ($scope.$$phase)
       $scope.$apply()
     )
