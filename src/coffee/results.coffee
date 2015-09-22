@@ -3,4 +3,5 @@ angular.module 'app'
     $scope.result = []
     SearchService.search().then(
       $scope.result = SearchService.getResponse()
+      $scope.apply()
     )
