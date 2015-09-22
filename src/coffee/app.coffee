@@ -8,6 +8,10 @@ angular.module 'app', ['ui.router', 'ngMaterial', 'ngMessages']
         templateUrl: './views/main.html'
         controller: 'mainController'
         controllerAs: 'mainCtrl'
+      .state 'results',
+        url: '/results'
+        templateUrl: './views/results.html'
+        controller: 'resultsController'
       .state 'partial',
         url: '/partial'
         templateUrl: './views/partial.html'

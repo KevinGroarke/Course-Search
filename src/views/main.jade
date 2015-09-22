@@ -8,10 +8,13 @@ form(name='searchForm').center-element.md-whiteframe-z3
 
         .all-columns
             md-chips(ng-model='selectedSubjects',  md-autocomplete-snap, md-require-match='true', md-on-append='shortenChip($chip)')
-                md-autocomplete(md-selected-item='selectedItem', md-search-text='searchText',
+                md-autocomplete(md-menu-class='auto-complete-width', md-selected-item='selectedItem', md-search-text='searchText',
                     md-items='item in querySearch(searchText)', md-item-text='item.subjectShort',
                     placeholder='Search for a subject')
                     span(md-highlight-text='searchText') {{ item.subjectLong }}
 
         .all-columns
             md-switch.md-primary.all-columns(md-no-ink, aria-label='Switch No Ink', ng-model='allExcept') All Subjects Except
+
+        .submit-button
+            md-button.md-raised.md-primary(action='submit()') Submit

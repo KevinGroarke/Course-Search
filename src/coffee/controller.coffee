@@ -1,6 +1,5 @@
 angular.module 'app'
-  .controller 'mainController', ($scope) ->
-    $scope.blah = ['gah', 'wah']
+  .controller 'mainController', ($scope, $location, SearchService) ->
     $scope.selectedItem = null
     $scope.searchText = null
     $scope.querySearch = querySearch
@@ -8,6 +7,10 @@ angular.module 'app'
     $scope.selectedSubjects = []
     $scope.shortenChip = (chip) ->
       return chip.subjectShort
+
+    $scope.submit = ->
+      SearchService.setSearchParams($scope.rmpRating, $scope.hoursWorked, $scope.selectedSubjects, $scope.allExcept)
+      $location.path('results')
 
     $scope.addAll = ->
       shortenedSubjects = $scope.subjects.map((subject) ->
