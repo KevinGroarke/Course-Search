@@ -9,6 +9,7 @@ angular.module 'app'
       return chip.subjectShort
 
     $scope.submit = ->
+      console.log('Button submitted!')
       SearchService.setSearchParams($scope.rmpRating, $scope.hoursWorked, $scope.selectedSubjects, $scope.allExcept)
       $location.path('results')
 
