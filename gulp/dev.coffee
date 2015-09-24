@@ -19,7 +19,6 @@ gulp.task 'webserver', ['compile'], ->
     .pipe plgn.webserver
       livereload: true
       open: true
-      port: 8005
 
 # Default task
 gulp.task 'default', ['compile', 'webserver', 'watch']

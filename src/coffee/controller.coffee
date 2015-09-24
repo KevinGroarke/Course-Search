@@ -4,12 +4,15 @@ angular.module 'app'
     $scope.searchText = null
     $scope.querySearch = querySearch
     $scope.subjects = loadSubjects()
+    $scope.rmpRating = 0
+    $scope.hoursWorked = 0
     $scope.selectedSubjects = []
+    $scope.allExcept = false
     $scope.shortenChip = (chip) ->
       return chip.subjectShort
 
     $scope.submit = ->
-      console.log('Button submitted!')
+      console.log($scope.rmpRating + ' ' + $scope.hoursWorked + ' ' + $scope.selectedSubjects + ' ' + $scope.allExcept)
       SearchService.setSearchParams($scope.rmpRating, $scope.hoursWorked, $scope.selectedSubjects, $scope.allExcept)
       $location.path('results')
 

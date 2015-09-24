@@ -4,8 +4,6 @@ angular.module 'app'
     _hoursWorked = 0
     _subjects = []
     _allExcept = false
-    _response = []
-    _status = 0
     factory = {}
 
     factory.setSearchParams = (rmpRating, hoursWorked, subjects, allExcept) ->
@@ -20,19 +18,7 @@ angular.module 'app'
         'hoursWorked': _hoursWorked
         'subjects': _subjects
         'allExcept': _allExcept
-      ).then((response) -> _response = response)
-      searchPromise.
-      success((data, status) ->
-        _status = status
-        _response = data
-      ).
-      error((data, status) ->
-        _status = status
-        _response = data or 'Request failed'
       )
-
-
-    factory.getResponse = ->
-      return _response
+      return searchPromise
 
     return factory
