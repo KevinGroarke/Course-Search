@@ -1,20 +1,21 @@
 .center-element
     md-progress-circular(md-mode='{{loadingMode}}')
 
-ul
-    li(ng-repeat='course in courses') CourseName: {{ course.courseName }} ProfessorName: {{ course.professorName }} RMP Rating: {{ course.rmpRating }}
-
 md-data-table-container
     table.md-primary(md-data-table, md-progress='deferred')
         thead
             tr
+                th(name='Course Subject')
                 th(name='Course Name')
+                th(name='Professor Name')
                 th(name='RMP Rating')
                 th(name='Hours Worked')
         tbody
             tr(md-auto-select, ng-repeat='course in courses | limitTo: query.limit: (query.page - 1) * query.limit')
+                td {{ course.courseSubject }}
                 td {{ course.courseName }}
+                td {{ course.professorName }}
                 td {{ course.rmpRating }}
-                td {{ course.studyHours }}
+                td {{ course.averageCape.studyHours }}
 
 md-data-table-pagination(md-limit='query.limit', md-page='query.page', md-total='{{courses.length}}', md-trigger='onpagechange')
