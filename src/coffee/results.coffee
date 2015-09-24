@@ -4,5 +4,7 @@ angular.module 'app'
     $scope.loadingMode = 'indeterminate'
     SearchService.search().then((response) ->
       $scope.loadingMode = ''
-      $scope.courses = JSON.parse(response).data
+      $scope.courses = response.data.map((obj) -> 
+        return JSON.parse(obj.data)  
+      )
     )

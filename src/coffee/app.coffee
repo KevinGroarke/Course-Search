@@ -1,4 +1,4 @@
-angular.module 'app', ['ui.router', 'ngMaterial', 'ngMessages']
+angular.module 'app', ['ui.router', 'md.data.table', 'ngMaterial', 'ngMessages']
   .config ($stateProvider, $urlRouterProvider, $mdThemingProvider) ->
     $urlRouterProvider.otherwise '/'
 
