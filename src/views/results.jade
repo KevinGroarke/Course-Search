@@ -3,7 +3,7 @@
 md-toolbar
       .md-toolbar-tools
         .md-title Course Search
-    md-content(laout='column', flex='')
+    md-content(layout='column', flex='')
         md-data-table-toolbar()
           h2.md-title Search Results
 
@@ -12,16 +12,26 @@ md-data-table-container
         thead
             tr
                 th(name='Course Subject')
+                th(name='Course Number')
                 th(name='Course Name')
                 th(name='Professor Name')
                 th(name='RMP Rating')
                 th(name='Hours Worked')
+                th(name='Grade Expected (GPA)')
+                th(name='Grade Received (GPA)')
+                th(name='% Recommend Professor')
+                th(name='% Recommend Class')
         tbody
             tr(md-auto-select, ng-repeat='course in courses | limitTo: query.limit: (query.page - 1) * query.limit')
                 td {{ course.courseSubject }}
+                td {{ course.courseNumber }}
                 td {{ course.courseName }}
                 td {{ course.professorName }}
                 td {{ course.rmpRating }}
                 td {{ course.averageCape.studyHours }}
+                td {{ course.averageCape.averageGradeExpected }}
+                td {{ course.averageCape.averageGradeReceived }}
+                td {{ course.averageCape.recommendProfessor }}
+                td {{ course.averageCape.recommendClass }}
 
 md-data-table-pagination(md-limit='query.limit', md-page='query.page', md-total='{{courses.length}}', md-trigger='onpagechange')
