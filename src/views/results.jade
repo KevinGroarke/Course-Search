@@ -1,5 +1,11 @@
 .center-element
     md-progress-circular(md-mode='{{loadingMode}}')
+md-toolbar
+      .md-toolbar-tools
+        .md-title Course Search
+    md-content(laout='column', flex='')
+        md-data-table-toolbar()
+          h2.md-title Search Results
 
 md-data-table-container
     table.md-primary(md-data-table, md-progress='deferred')

@@ -3,7 +3,7 @@ angular.module 'app'
     $scope.courses = []
     $scope.loadingMode = 'indeterminate'
     $scope.query =
-      limit: 5
+      limit: 15
       page: 1
     SearchService.search().then((response) ->
       $scope.loadingMode = ''
