@@ -7,6 +7,6 @@
     "bootstrap": "~3.2.0",
     "angular-material": "*",
     "angular-messages": "*",
-    "jquery": "*"
+    "md-data-table": "*"
   }
 }

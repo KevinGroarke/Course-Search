@@ -1,4 +1,12 @@
-ul
-    li(ng-repeat='item in result') {{ item }}
+.center-element
+    md-progress-circular(md-mode='{{loadingMode}}')
 
-a {{ result }}
+md-data-table
+    md-data-table-header-row
+        md-data-table-column Course Name
+        md-data-table-column RMP Rating
+        md-data-table-column Hours Worked
+    md-data-table-row(ng-repeat='course in courses')
+        md-data-table-cell {{ course.courseName }}
+        md-data-table-cell {{ course.rmpRating }}
+        md-data-table-cell {{ course.hoursWorked }}
