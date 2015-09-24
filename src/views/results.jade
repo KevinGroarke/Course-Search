@@ -4,28 +4,17 @@
 ul
     li(ng-repeat='course in courses') CourseName: {{ course.courseName }} ProfessorName: {{ course.professorName }} RMP Rating: {{ course.rmpRating }}
 
-md-data-table-toolbar
-      h2.md-title Courses
-    md-data-table-container
-      table(md-data-table='', md-progress='deferred')
-        thead(md-order='query.order', md-trigger='onOrderChange')
-          tr
-            th(name='Dessert', unit='100g serving', order-by='name')
-            th(numeric='', name='Calories', order-by='calories.value')
-            th(numeric='', name='Fat', unit='g', order-by='fat.value')
-            th(numeric='', name='Carbs', unit='g', order-by='carbs.value')
-            th(numeric='', name='Protein', unit='g', order-by='protein.value')
-            th(numeric='', name='Sodium', unit='mg', order-by='sodium.value')
-            th(numeric='', name='Calcium', unit='%', order-by='calcium.value')
-            th(numeric='', name='Iron', unit='%', order-by='iron.value')
+md-data-table-container
+    table.md-primary(md-data-table, md-progress='deferred')
+        thead
+            tr
+                th(name='Course Name')
+                th(name='RMP Rating')
+                th(name='Hours Worked')
         tbody
-          tr(md-auto-select='', ng-repeat='dessert in desserts.data')
-            td {{dessert.name}}
-            td {{dessert.calories.value}}
-            td {{dessert.fat.value | number: 1}}
-            td {{dessert.carbs.value}}
-            td {{dessert.protein.value | number: 1}}
-            td {{dessert.sodium.value}}
-            td(show-unit='') {{dessert.calcium.value}}
-            td(show-unit='') {{dessert.iron.value}}
-    md-data-table-pagination(md-limit='query.limit', md-page='query.page', md-total='{{desserts.total}}', md-trigger='onPaginationChange')
+            tr(md-auto-select, ng-repeat='course in courses | limitTo: query.limit: (query.page - 1) * query.limit')
+                td {{ course.courseName }}
+                td {{ course.rmpRating }}
+                td {{ course.studyHours }}
+
+md-data-table-pagination(md-limit='query.limit', md-page='query.page', md-total='{{courses.length}}', md-trigger='onpagechange')
