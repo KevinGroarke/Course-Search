@@ -8,7 +8,14 @@ angular.module 'app'
     SearchService.search().then((response) ->
       $scope.loadingMode = ''
       $scope.courses = response.data.map((obj) -> 
-        return JSON.parse(obj.data)  
+        courseObj = JSON.parse(obj.data)
+        courseObj.averageCape.studyHours = courseObj.averageCape.studyHours.toFixed(2)
+        courseObj.averageCape.averageGradeExpected = courseObj.averageCape.averageGradeExpected.toFixed(2)
+        courseObj.averageCape.averageGradeReceived = courseObj.averageCape.averageGradeReceived.toFixed(2)
+        courseObj.averageCape.recommendProfessor = courseObj.averageCape.recommendProfessor.toFixed(2)
+        courseObj.averageCape.recommendClass = courseObj.averageCape.recommendClass.toFixed(2)
+
+        return courseObj 
       )
     )
 

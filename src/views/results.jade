@@ -2,7 +2,7 @@
     md-progress-circular(md-mode='{{loadingMode}}')
 md-toolbar
       .md-toolbar-tools
-        .md-title Course Search
+        .md-title UCSD Course Search
     md-content(layout='column', flex='')
         md-data-table-toolbar()
           h2.md-title Search Results
@@ -34,4 +34,4 @@ md-data-table-container
                 td {{ course.averageCape.recommendProfessor }}
                 td {{ course.averageCape.recommendClass }}
 
-md-data-table-pagination(md-limit='query.limit', md-page='query.page', md-total='{{courses.length}}', md-trigger='onpagechange')
+md-data-table-pagination.white-color(md-limit='query.limit', md-page='query.page', md-total='{{courses.length}}', md-trigger='onpagechange')
